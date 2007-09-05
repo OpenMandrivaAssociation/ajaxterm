@@ -1,15 +1,15 @@
 Summary: A web based terminal
 Name: ajaxterm
-Version: 0.9
-Release: %mkrel 2
+Version: 0.10
+Release: %mkrel 1
 
 # LGPL for the bundled js part 
 License: GPL and LGPL
 Group: System/Servers
 URL: http://antony.lesuisse.org/qweb/trac/wiki/AjaxTerm
 Source: http://antony.lesuisse.org/qweb/files/Ajaxterm-%{version}.tar.bz2
-Source1: %{name}.init.bz2
-Source2: %{name}.sysconfig.bz2
+Source1: %{name}.init
+Source2: %{name}.sysconfig
 Requires(preun): rpm-helper
 Requires(post):  rpm-helper
 Requires: python
@@ -39,8 +39,8 @@ make install
 mkdir -p %{buildroot}/%_initrddir/
 mkdir -p %{buildroot}/%_sysconfdir/sysconfig
 
-bzcat %SOURCE1 > %{buildroot}/%_initrddir/%{name}
-bzcat %SOURCE2 > %{buildroot}/%_sysconfdir/sysconfig/%name
+cp %SOURCE1 %{buildroot}/%_initrddir/%{name}
+cp %SOURCE2 %{buildroot}/%_sysconfdir/sysconfig/%name
 
 chmod 755 %{buildroot}/%_initrddir/%{name}
 perl -pi -e 's|%{buildroot}/||g' %{buildroot}/%{_bindir}/ajaxterm

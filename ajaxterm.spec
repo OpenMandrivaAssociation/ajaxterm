@@ -14,7 +14,6 @@ Requires(preun): rpm-helper
 Requires(post):  rpm-helper
 Requires: python
 BuildRequires: python
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch: noarch
 
 %description

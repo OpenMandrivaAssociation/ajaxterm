@@ -1,7 +1,7 @@
 Summary: A web based terminal
 Name: ajaxterm
 Version: 0.10
-Release: %mkrel 2
+Release: %mkrel 3
 
 # LGPL for the bundled js part 
 License: GPL and LGPL

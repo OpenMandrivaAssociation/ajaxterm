@@ -64,3 +64,64 @@ perl -pi -e 's|%{buildroot}/||g' %{buildroot}/%{_bindir}/ajaxterm
 %_preun_service %{name}
 
 
+
+
+%changelog
+* Thu Dec 09 2010 Oden Eriksson <oeriksson@mandriva.com> 0.10-6mdv2011.0
++ Revision: 616557
+- the mass rebuild of 2010.0 packages
+
+* Tue Sep 01 2009 Thierry Vignaud <tv@mandriva.org> 0.10-5mdv2010.0
++ Revision: 424009
+- rebuild
+
+* Tue Sep 01 2009 Thierry Vignaud <tv@mandriva.org> 0.10-4mdv2010.0
++ Revision: 423968
+- rebuild
+
+* Tue Sep 01 2009 Thierry Vignaud <tv@mandriva.org> 0.10-3mdv2010.0
++ Revision: 423937
+- rebuild
+
+* Thu Jun 19 2008 Thierry Vignaud <tv@mandriva.org> 0.10-2mdv2009.0
++ Revision: 226142
+- rebuild
+
+* Thu Dec 20 2007 Olivier Blin <oblin@mandriva.com> 0.10-1mdv2008.1
++ Revision: 135819
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Wed Sep 05 2007 Michael Scherer <misc@mandriva.org> 0.10-1mdv2008.0
++ Revision: 80049
+- 0.10
+- uncompress files
+
+
+* Tue Oct 03 2006 Michael Scherer <misc@mandriva.org> 0.9-2mdv2007.0
++ Revision: 62824
+- requires python, fix bug #24176
+- Import ajaxterm
+
+* Sat Jul 22 2006 Michael Scherer <misc@mandriva.org> 0.9-2mdv2007.0
+- add missing BuildRequires, since python is no longer required for 
+  rpm-build and basesystem
+
+* Fri Jul 21 2006 Michael Scherer <misc@mandriva.org> 0.9-1mdv2007.0
+- New version 0.9
+
+* Mon Jul 10 2006 Michael Scherer <misc@mandriva.org> 0.8-1
+- New release 0.8
+
+* Fri Jun 02 2006 Michael Scherer <misc@mandriva.org> 0.7-2mdv2007.0
+- fix #22855
+
+* Thu Jun 01 2006 Michael Scherer <misc@mandriva.org> 0.7-1mdk
+- New release 0.7
+- removed patch0, applied upstream
+
+* Thu May 25 2006 Michael Scherer <misc@mandriva.org> 0.6-1mdk
+- First package
+

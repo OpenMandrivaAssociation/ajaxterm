@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# Startup script for some_daemon
+#
+# chkconfig: 345 86 16
+# description: A web based terminal accessible by a web browser.
+#              
+# processname: ajaxterm.py
+
+### BEGIN INIT INFO
+# Provides: ajaxterm
+# Required-Start: $network
+# Default-Start: 5
+# Short-Description: A web based terminal accessible by a web browser.
+# Description: A web based terminal accessible by a web browser.
+### END INIT INFO
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+DAEMON_NAME=ajaxterm
+
+PORT=8022
+
+[ -f /etc/sysconfig/$DAEMON_NAME ] && . /etc/sysconfig/$DAEMON_NAME
+
+case "$1" in
+  start)
+        gprintf "Starting %s: " $DAEMON_NAME
+        daemon $DAEMON_NAME --daemon $OPTIONS --port $PORT
+        echo
+        touch /var/lock/subsys/$DAEMON_NAME
+        ;;
+  stop)
+        gprintf "Shutting down %s: " $DAEMON_NAME
+        killproc $DAEMON_NAME
+        echo
+        rm -f /var/lock/subsys/$DAEMON_NAME
+        ;;
+  status)
+        status $DAEMON_NAME
+        ;;
+  reload|restart)
+        $0 stop
+        $0 start
+        ;;
+  *)
+        gprintf "Usage: %s\n" "$0 {start|stop|restart|reload|status}"
+        exit 1
+esac
+
+exit 0

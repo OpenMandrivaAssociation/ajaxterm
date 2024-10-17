@@ -6,7 +6,7 @@ Release: 7
 # LGPL for the bundled js part 
 License: GPL and LGPL
 Group: System/Servers
-URL: http://antony.lesuisse.org/qweb/trac/wiki/AjaxTerm
+URL: https://antony.lesuisse.org/qweb/trac/wiki/AjaxTerm
 Source: http://antony.lesuisse.org/qweb/files/Ajaxterm-%{version}.tar.bz2
 Source1: %{name}.init
 Source2: %{name}.sysconfig

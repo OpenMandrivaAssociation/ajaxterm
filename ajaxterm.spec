@@ -13,6 +13,11 @@ Source2: %{name}.sysconfig
 Requires(preun): rpm-helper
 Requires(post):  rpm-helper
 Requires: python
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: python
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch: noarch
